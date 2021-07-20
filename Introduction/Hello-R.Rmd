@@ -2,7 +2,7 @@
 title: "Hello R"
 author: "Zach Morales"
 date: "7/20/2021"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r init, include=FALSE}
