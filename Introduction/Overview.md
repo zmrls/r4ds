@@ -1,4 +1,4 @@
-# Overview
+# Overview - Introduction
 
 ![](data-science-tools.png)  
 
@@ -7,7 +7,7 @@
 - **Import:** taking data stored in a file, database, or API and loading it into a data frame.
 - **Tidy:** Storing the data into a consistent form matching the semantics of the dataset with the way it is stored (each column is a variable, each row is an observation). Tidy data ensures focus is towards questions about the data not fighting the data structure.
 - **Transform:** Creating new variables that are functions of existing variables and calculating summary statistics to narrow in on observations of interest.
-- **Wrangling:** Commonly used when referring to tidying + transforming data.
+- **Wrangling:** Commonly used when referring to importing + tidying + transforming data.
 
 ### Knowledge Generation
 
