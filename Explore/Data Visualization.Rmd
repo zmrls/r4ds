@@ -13,16 +13,35 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Visualizations are centered around the tidyverse package `ggplot2`. Install a package once, load it every time you start a new R session. Load tidyverse (including ggplot2) using:
 
-```{r load, eval=FALSE}
+```{r load}
 library(tidyverse)
 ```
 
-### 
+### First Steps
 
-You can also embed plots, for example:
+First look at a data frame (rectangular collection of variables (columns) and observations (rows). 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r mpg}
+mpg
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Create a plot showing `hwy` (fuel efficiency on the highway in mpg) as a function of `displ` (engine size in liters). We can use this data to answer a question: Do cars with big engines use more fuel than cars with small engines? It is important to make answer precise detailing the relationship between engine size and fuel efficiency. Best to use keywords such as **positive**, **negative**, **linear**, **nonlinear**. 
+
+```{r mpg plot1}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+From the plot, I would say there is a **negative** relationship between engine size and fuel efficiency. Typically, smaller engines provide greater fuel efficiency. 
+
+##### Basic ggplot template
+
+```{r ggplot template, eval = FALSE}
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+- `ggplot()` creates a coordinate system, layers are added to this.
+  + `ggplot(data = mpg)` first parameter for ggplot is the dataset to be used in the graph. This line of code along will only create an empty graph.
+  + `geom_point()` complete the graph by adding one or more layers to `ggplot()`. `geom_point()` is an example of one of the layers that can be added to the graph which creates a scatter plot.
+    + Each geom function takes a mapping parameter. This defines how variables in the dataset are mapped to visual properties. This mapping is done with `aes()`.
